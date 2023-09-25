@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace PVK
 {
-    internal class Flat
+    internal class Flat:House
     {
+        public string Label { get; init; }
+        public Flat(ContactPerson contactPerson, PragueCompany company, WaterMeter waterMater,string label): base(contactPerson, company, waterMater)
+        {
+            this.Label = label;
+        }
     }
 }
