@@ -8,13 +8,23 @@ namespace PVK
 {
     internal class PragueCompany
     {
+        /// <summary>
+        /// Customer need to know with which company has contract
+        /// </summary>
         public string nameCompany { get; set; }
+        /// <summary>
+        /// PVK have to know where he distributs his water
+        /// </summary>
         private List<object> realEstate { get; set; }
         public PragueCompany(string nameCompany)
         {
             this.nameCompany = nameCompany;
             realEstate = new List<object>();
         }
+        /// <summary>
+        /// PVK is sending bill for water
+        /// </summary>
+        /// <returns></returns>
         public string Invoices()
         {
             string bills = "";
@@ -36,6 +46,10 @@ namespace PVK
             }
             return bills;
         }
+        /// <summary>
+        /// Add new apartment / house to database where PVK have to distribute water
+        /// </summary>
+        /// <param name="realEstate"></param>
         public void AddToList(object realEstate)
         {
             this.realEstate.Add(realEstate);
