@@ -15,26 +15,26 @@ namespace PVK
             this.nameCompany = nameCompany;
             realEstate = new List<object>();
         }
-        public string BillingTime()
+        public string Invoices()
         {
-            string bill = "";
+            string bills = "";
             foreach (object item in realEstate)
             {
                 if(item is House)
                 {
                     House house = (House)item;
-                    bill += house.contactPerson.RecieveBill(new Billing(house.contactPerson.Name, house.contactPerson.Surname, house.contactPerson.telephoneNumber, house.waterMater.consumedValue, house.waterMater.consumedValue * 20)) + "\n";
+                    bills += house.contactPerson.RecieveBill(new Billing(house.contactPerson.Name, house.contactPerson.Surname, house.contactPerson.telephoneNumber, house.waterMater.consumedValue, house.sewageDrain)) + "\n";
                 }
                 if(item is ApartmentBuilding)
                 {
                     ApartmentBuilding apartment = (ApartmentBuilding)item;
                     foreach (Flat flats in apartment.flats)
                     {
-                        bill += flats.contactPerson.RecieveBill(new Billing(flats.contactPerson.Name, flats.contactPerson.Surname, flats.contactPerson.telephoneNumber, flats.waterMater.consumedValue, flats.waterMater.consumedValue * 20)) + "\n";
+                        bills += flats.contactPerson.RecieveBill(new Billing(flats.contactPerson.Name, flats.contactPerson.Surname, flats.contactPerson.telephoneNumber, flats.waterMater.consumedValue,flats.sewageDrain)) + "\n";
                     }
                 }
             }
-            return bill;
+            return bills;
         }
         public void AddToList(object realEstate)
         {

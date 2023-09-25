@@ -12,6 +12,7 @@ namespace PVK
         public ContactPerson contactPerson { get; private set; }
         public PragueCompany company { get; set; }
         public WaterMeter waterMater { get;  private set; }
+        public int sewageDrain { get; private set; }
         public House(ContactPerson contactPerson, PragueCompany company, WaterMeter waterMater)
         {
             this.contactPerson = contactPerson;
@@ -25,7 +26,7 @@ namespace PVK
         }
         public void SewageCharges()
         {
-
+            sewageDrain += 1;
         }
 
     }

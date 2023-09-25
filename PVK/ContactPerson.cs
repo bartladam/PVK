@@ -21,7 +21,7 @@ namespace PVK
         public string RecieveBill(Billing billing)
         {
             this.billing = billing;
-            return string.Format("Bill:\nName: {0} {1}\nConsumed water {2}\nPrice for litre {3}\nPrice: {4} Kč\n",billing.Name,billing.Surname,billing.consumedWater,20,billing.price);
+            return string.Format("Bill:\nName: {0} {1}\nConsumed water: {2}l\nPrice for litre {3} Kč\nSewage drain: {4}l\nPrice for litre sewage: {5}Kč\nPrice: {6}Kč\n", billing.Name,billing.Surname,billing.consumedWater,20,billing.wasteDrain,10, billing.waterPrice + billing.wastePrice);
         }
     }
 }

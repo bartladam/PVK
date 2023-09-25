@@ -1,5 +1,4 @@
-﻿
-using PVK;
+﻿using PVK;
 
 PragueCompany PVK = new PragueCompany("PRAGUE WATER SUPPLY AND SEWERAGE COMPANY");
 House house = new House(new ContactPerson("Petr", "Vybíhal", 735125654), PVK, new WaterMeter("158ABC")) {Adress = "K dolinám 12"};
@@ -21,6 +20,7 @@ foreach (Flat item in apartment.flats)
     for (int i = 0; i < randomWaterCharges.Next(5,10); i++)
     {
         item.WaterCharges();
+        item.SewageCharges();
     }
 }
-Console.WriteLine(PVK.BillingTime()); 
+Console.WriteLine(PVK.Invoices()); 
